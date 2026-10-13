@@ -2022,6 +2022,9 @@
         },
         "file": {
           "path": "./icons/file.svg"
+        },
+        "evm-trace": {
+          "path": "./icons/evm-trace.svg"
         }
       },
       "directory_icons": {
@@ -22047,7 +22050,10 @@
         "skills.md": "skill",
         "instructions.md": "instructions",
         "instruction.md": "instructions",
-        "mrpack": "mrpack"
+        "mrpack": "mrpack",
+        "trace": "evm-trace",
+        "traces": "evm-trace",
+        "sol.trace": "evm-trace"
       },
       "file_stems": {
         ".pug-lintrc": "pug",
@@ -31465,7 +31471,9 @@
         "AGENTS.MD": "agent",
         "agents.MD": "agent",
         "AGENTS.md": "agent",
-        "Agents.md": "agent"
+        "Agents.md": "agent",
+        "trace": "evm-trace",
+        "traces": "evm-trace"
       }
     }
   ]

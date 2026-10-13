@@ -26,6 +26,9 @@ export const getTheme = (manifest: Manifest): IconTheme => {
       ([key]) => !key.startsWith("folder")
     )
   );
+  fileIconDefinitions["evm-trace"] = {
+    path: "./icons/evm-trace.svg",
+  };
   const folderIconDefinitions = Object.fromEntries(
     Object.entries(transformedIconDefinitions).filter(([key]) =>
       key.startsWith("folder")
@@ -85,7 +88,16 @@ export const getTheme = (manifest: Manifest): IconTheme => {
       expanded: "./icons/folder-open.svg",
     },
     named_directory_icons,
-    file_suffixes: manifest.fileExtensions ?? {},
-    file_stems: transformedFileNames,
+    file_suffixes: {
+      ...(manifest.fileExtensions ?? {}),
+      trace: "evm-trace",
+      traces: "evm-trace",
+      "sol.trace": "evm-trace",
+    },
+    file_stems: {
+      ...transformedFileNames,
+      trace: "evm-trace",
+      traces: "evm-trace",
+    },
   };
 };

@@ -33,4 +33,16 @@ fs.readdirSync(iconsSourceDir).forEach((file) => {
   const destFile = join(iconsDestDir, file);
   fs.copyFileSync(sourceFile, destFile);
 });
-console.log("Material Icon Theme icons copied successfuly.");
+
+// Copy custom icons from custom_icons directory
+const customIconsDir = join(__dirname, "../custom_icons");
+if (fs.existsSync(customIconsDir)) {
+  fs.readdirSync(customIconsDir).forEach((file) => {
+    if (file.endsWith(".svg")) {
+      const sourceFile = join(customIconsDir, file);
+      const destFile = join(iconsDestDir, file);
+      fs.copyFileSync(sourceFile, destFile);
+    }
+  });
+}
+console.log("Material Icon Theme and custom icons copied successfully.");
